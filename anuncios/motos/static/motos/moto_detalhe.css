@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #666;
+    font-family: 'Roboto', sans-serif;
+}
+
+#moto_detalhe > h1{
+    background-color: #333;
+    color: aliceblue;
+    text-align: center;
+    margin: 1rem;
+}
+
+.opc{
+    color: aliceblue;
+    background-color: #333;
+    margin: 1.5rem;
+    margin-left: .5rem;
+}
+
+#opcionais, #info{
+    border-radius: .5rem;
+}
+
+
+#voltar {
+    text-align: center;
+    color: aliceblue;
+    padding: 15px;
+    margin: 20px;
+    margin-left: 0;
+    text-decoration: none;
+    background-color: black;
+    border-radius: 10px;
+    width: 130px;
+    height: 50px;
+}
+
+#voltar:hover{
+    background-color: #666;
+}
+
+#moto_detalhe{
+    background-color: #333;
+    width: 75%;
+    height: 100%;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: .5rem;
+    padding: 10px;
+}
+
+#detalhes_esquerda {
+    width: 60%;
+    height: 65vh;
+}
+
+#detalhes_esquerda > img {
+    display: inline-block;
+    object-fit: cover;
+    width: 100%;
+    height: 80%;
+    border-radius: 0 0 .5rem 0;
+}
+
+#moto_detalhe > h2 {
+    text-align: center;
+    display: inline-block;
+}
+
+#opcionais > p {
+    font-size: 2rem;
+    margin: .5rem;
+}
+
+#opcionais,#info{
+    flex-direction: row;
+    margin: .5rem;
+    padding: 1.5rem;
+}
+
+#info > p{
+    display: block;
+    font-size: 1.5rem;
+    text-indent: 2rem;
+}
+
+#detalhes_direita > p {
+    font-size: 2.5rem;
+    margin: .5rem;
+}
+
+#centro{
+    display: flex;
+    flex-direction: row;
+}
+
+#imagens-baixo{
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    margin-bottom: 1.5rem;
+}
+
+#imagens-baixo > img{
+    margin-top: .5rem;
+    object-fit: cover;
+    width: 15%;
+    height: 90%;
+    margin: .9rem;
+    border-radius: .5rem;
+}
+
+#imagens-baixo > img:hover{
+    opacity: .5;
+    cursor: pointer;
+
+}
+
+#imagens-baixo > img:first-of-type{
+    margin-left: 2rem;
+}
+#imagens-baixo > img:last-of-type{
+    margin-right: 2rem;
+}
+
+#detalhes_esquerda, #detalhes_direita{
+    display: flex;
+    flex-direction: column;
+}
+#detalhes_direita{
+    margin: 2rem;
+}
+
+input{
+    font-size: 1.5rem;
+    background-color: #333;
+    border-radius: .5rem;
+    margin: .5rem;
+    padding: .9rem;
+    border: none;
+}
+
+input:hover{
+    cursor: pointer;
+    color: red;
+    background-color: black;
+}
+
+#col-opc > a{
+    border: none;
+    background-color: #666;
+    box-shadow: none;
+}
+
+#detalhes_direita > p > span {
+    background-color: black;
+    color: red;
+    border-radius: 100%;
+    padding: 1.5rem;
+
+}
+

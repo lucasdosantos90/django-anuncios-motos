@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <a id="voltar" href="{% url 'homepage' %}">Voltar</a>
+
+    <div id="moto_detalhe">
+        <h1>{{moto.nome}}</h1>
+        <div id="centro">
+            <div id="detalhes_esquerda">
+                <img id="foto_p" src="{{moto.foto_principal.url}}" alt="{{moto.foto_principal.url}}">
+                <div id="imagens-baixo">
+                    <img id="foto_1" src="{{moto.foto_principal.url}}" alt="">
+                    <img id="foto_2" src="{{moto.foto_1.url}}" alt="">
+                    <img id="foto_3" src="{{moto.foto_2.url}}" alt="">
+                    <img id="foto_4" src="{{moto.foto_3.url}}" alt="">
+                    <img id="foto_5" src="{{moto.foto_4.url}}" alt="">
+                </div>
+            </div>
+            <div id="detalhes_direita">
+                <p>
+                    <span class="material-symbols-outlined">
+                        attach_money
+                    </span>
+                    {{moto.preco}}
+                </p>
+                <p>
+                    <span class="material-symbols-outlined">
+                        sports_motorsports
+                    </span>
+                    {{moto.modelo}}
+                </p>
+                <p>
+                    <span class="material-symbols-outlined">
+                        calendar_today
+                    </span>
+                    {{moto.ano}}
+                </p>
+                <p>
+                    <span class="material-symbols-outlined">
+                        palette
+                    </span>
+                    {{moto.cor}}
+                </p>
+                <p>
+                    <span class="material-symbols-outlined">
+                        speed
+                    </span>
+                    {{moto.km}}
+                     Km
+                </p>
+            </div>
+        </div>
+        <h2 class="opc">Opcionais</h2>
+        <div id="opcionais">
+            <div id="col-opc">
+                {% for moto_opcionais in moto.opcionais.all %}     
+                <a href="{% url 'moto_detalhe_pesq' moto_opcionais.id %}">
+                    <input readonly name="pesquisa_opcionais" type="text" value="{{moto_opcionais}}">
+                </a>    
+                {% endfor %}
+            </div>            
+        </div>
+        <h2 class="opc">Informações sobre o veículo</h2>
+        <div id="info">
+            <p>{{ moto.informacoes }}</p>
+        </div>
+
+        
+    </div>
+{% endblock content %}    

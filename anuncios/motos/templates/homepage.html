@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Motos</h1>
+<div id="pesq_form">
+    <form method="GET">
+        <input id="pesquisa" type="text" name="search" value="{{ search }}">
+        <input id="btn_pesquisa" type="button" type="submit" value="Pesquisar">
+    </form>    
+</div>
+    {% if pesq_opcionais %}
+        <p class="pesq_opcionais">Você pesquisou por: {{ pesq_opcionais }}</p>
+    {% endif %}
+    <div class="container">
+        {% for moto in page_obj %}
+            <a class="moto" href="{% url 'moto_detalhe' moto.id %}">
+                <h2>{{moto.nome}}</h2>
+                <p>
+                    R$
+                    {{moto.preco}}
+                </p>
+                <img src="{{moto.foto_principal.url}}" alt="{{moto.foto.url}}">
+            </a>
+        {% endfor %}
+    </div>
+
+<div class="pagination">
+    <p>
+        Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+    </p>
+    {% if page_obj.has_previous %}
+        <a href="?page=1">Primeira Página</a>
+        <a href="?page={{ page_obj.previous_page_number }}">Página Anterior</a>
+    {% endif %}
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">Próxima Página</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">Última Página</a>
+    {% endif %}
+
+</div>
+{% endblock content %} 
